@@ -1,0 +1,145 @@
+{
+    "pesme":[
+        {
+            "id":1,
+            "naziv":"Ja ne mogu mila majko bez njega",
+            "izvodjac": "Gordana Stojicevic"
+        },
+        {
+            "id":2,
+            "naziv":"Pusti me da nadjem srcu lek",
+            "izvodjac": "Gordana Stojicevic"
+        },
+        {
+            "id":3,
+            "naziv":"Sta ce mi zivot",
+            "izvodjac": "Silvana Armenulic"
+        },
+        {
+            "id":4,
+            "naziv":"Rane moje",
+            "izvodjac": "Silvana Armenulic"
+        },
+        {
+            "id":5,
+            "naziv":"Danka",
+            "izvodjac": "Toma Zdravkovic"
+        },
+        {
+            "id":6,
+            "naziv":"Volela sam, volela",
+            "izvodjac": "Hanka Paldum"
+        },
+        {
+            "id":7,
+            "naziv":"Crne kose",
+            "izvodjac": "Hanka Paldum"
+        },
+        {
+            "id":8,
+            "naziv":"Svirajte nocas samo za nju",
+            "izvodjac": "Toma Zdravkovic"
+        },
+        {
+            "id":9,
+            "naziv":"Kafana je moja sudbina",
+            "izvodjac": "Toma Zdravkovic"
+        },
+        {
+            "id":10,
+            "naziv":"Okuj me care",
+            "izvodjac": "Halid Beslic"
+        },
+        {
+            "id": 11,
+            "naziv":"Jutro je",
+            "izvodjac": "Nada Topcagic"
+        },
+        {
+            "id":12,
+            "naziv":"Za mustuluk",
+            "izvodjac": "Haris Dzinovic"
+        },
+        {
+            "id":13,
+            "naziv":"Skitnica",
+            "izvodjac": "Marinko Rokvic"
+        },
+        {
+            "id":14,
+            "naziv":"Potrazicu oci nesto zelenije",
+            "izvodjac": "Marinko Rokvic"
+        },
+        {
+            "id":15,
+            "naziv":"Mecava",
+            "izvodjac": "Luis"
+        },
+        {
+            "id":16,
+            "naziv":"Slike u oku",
+            "izvodjac": "Luis"
+        },
+        {
+            "id":17,
+            "naziv":"Zal",
+            "izvodjac": "Saban Saulic"
+        },
+        {
+            "id":18,
+            "naziv":"Dodji da ostarimo zajedno",
+            "izvodjac": "Saban Saulic"
+        },
+        {
+            "id":19,
+            "naziv":"Slavija",
+            "izvodjac": ["Dzej", "Mina Kostic"]
+        },
+        {
+            "id":20,
+            "naziv":"A tebe nema",
+            "izvodjac": "Zorica Brunclik"
+        },
+        {
+            "id":21,
+            "naziv":"S prvom kisom",
+            "izvodjac": "Ljuba Alicic"
+        },
+        {
+            "id":22,
+            "naziv":"Ti ne licis ni na jednu",
+            "izvodjac": "Ljuba Alicic"
+        },
+        {
+            "id":23,
+            "naziv":"Samo malo",
+            "izvodjac": "Manjifiko"
+        },
+        {
+            "id":24,
+            "naziv":"Haljinicu boje lila",
+            "izvodjac": "Nikola Pejakovic"
+        },
+        {
+            "id":25,
+            "naziv":"Ruzo rumena",
+            "izvodjac": "Dragan Jovanovic"
+        },
+        {
+            "id":26,
+            "naziv":"Pukni zoro",
+            "izvodjac": "Manjifiko"
+        },
+        {
+            "id":27,
+            "naziv":"Kada bi me pitali",
+            "izvodjac": "Zorica Brunclik"
+        },
+        {
+            "id":28,
+            "naziv":"Pepeljuga",
+            "izvodjac": "Verica Serifovic"
+        }
+         
+    ]
+}
