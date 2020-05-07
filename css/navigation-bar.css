@@ -1,0 +1,39 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("./resources/background1.jpg");
+}
+
+.navContainer{
+    height: 80px;
+    width: 100%;
+}
+
+.logo{
+    font-size: 55px;
+    font-weight: 600;
+    font-family: 'Goudy Old Style';
+    font-style: italic;
+    color: darkred;
+    margin:10px;
+    padding: 0px 100 px;
+    line-height: 80px;
+}
+
+.dugme{
+    background-color: darkred; 
+    color: white;
+    transition-duration: 0.2s;
+    padding: 15px 32px;
+    margin: 5px;
+    border-radius: 7px;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+.dugme:hover{
+    background-color: firebrick;
+    color: rgb(77, 73, 73);
+}

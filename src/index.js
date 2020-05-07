@@ -1,9 +1,5 @@
-import {Observable} from 'rxjs';
-/*const arrow= () =>{
-    console.log("Ovo je arrow funkcija!")
-}
+import {drawNavigation} from "./Navigation/navigation-bar";
 
-arrow();*/
+drawNavigation();
 
-let pevaljka= new Observable("Biljana");
-pevaljka.subscribe();
+
