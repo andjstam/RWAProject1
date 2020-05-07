@@ -1,13 +1,13 @@
-
 body{
     margin: 0;
     padding: 0;
-    background-image: url("./resources/background1.jpg");
 }
 
 .navContainer{
     height: 80px;
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .logo{
@@ -15,9 +15,9 @@ body{
     font-weight: 600;
     font-family: 'Goudy Old Style';
     font-style: italic;
-    color: darkred;
-    margin:10px;
-    padding: 0px 100 px;
+    color:darkred;
+    margin:30px;
+    padding: 0px;
     line-height: 80px;
 }
 

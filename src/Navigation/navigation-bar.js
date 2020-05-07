@@ -1,7 +1,13 @@
-const css= require('../../css/navigation-bar.css');
+import '../../css/navigation-bar.css';
 
- export function drawNavigation(){
 
+export class NavigationBar{
+
+   constructor(){
+      this.rootContainer=document.getElementById("main");
+   }
+   
+   drawNavigation(){
     const navContainer=document.getElementById("navigation-bar");
     navContainer.className="navContainer";
 
@@ -22,4 +28,7 @@ const css= require('../../css/navigation-bar.css');
     dugme3.className="dugme";
     dugme3.innerHTML="Kraj";
     navContainer.appendChild(dugme3);
- }
+
+    this.rootContainer.appendChild(navContainer);
+   }
+}
