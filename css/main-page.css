@@ -1,8 +1,20 @@
+.mainContainer{
+    display:flex;
+    flex-direction: row;
+}
 
-
-.dobrdoslica{
-    font-size: 45px;
+.gostiDiv{
+    background-color: brown;
+    width: 65%;
+    font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 50px;
     color:white;
+}
+
+.pevacicaDiv{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 50px;
+    color: black;
 }

@@ -11,19 +11,19 @@ body{
 }
 
 .logo{
-    font-size: 55px;
+    font-size: 65px;
     font-weight: 600;
     font-family: 'Goudy Old Style';
     font-style: italic;
-    color:darkred;
+    color: rgb(123, 224, 224);
     margin:30px;
     padding: 0px;
     line-height: 80px;
 }
 
 .dugme{
-    background-color: darkred; 
-    color: white;
+    background-color:rgb(123, 224, 224); 
+    color: rgb(36, 33, 33);
     transition-duration: 0.2s;
     padding: 15px 32px;
     margin: 5px;
@@ -34,6 +34,6 @@ body{
     font-size: 16px;
 }
 .dugme:hover{
-    background-color: firebrick;
+    background-color: rgb(77, 73, 73)k;
     color: rgb(77, 73, 73);
 }

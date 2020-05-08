@@ -9,7 +9,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: './dist'
   },
-  watch: true,
   devServer: {
       contentBase: './dist'
   },
