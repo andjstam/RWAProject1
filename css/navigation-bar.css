@@ -8,10 +8,11 @@ body{
     width: 100%;
     display: flex;
     align-items: center;
+    display: flex;
 }
 
 .logo{
-    font-size: 65px;
+    font-size: 70px;
     font-weight: 600;
     font-family: 'Goudy Old Style';
     font-style: italic;
@@ -34,6 +35,6 @@ body{
     font-size: 16px;
 }
 .dugme:hover{
-    background-color: rgb(77, 73, 73)k;
-    color: rgb(77, 73, 73);
+    background-color: rgb(182, 21, 21)k;
+    color: rgb(255, 255, 255);
 }

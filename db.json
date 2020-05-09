@@ -3,77 +3,93 @@
         {
             "id":1,
             "naziv":"Ja ne mogu mila majko bez njega",
-            "izvodjac": "Gordana Stojicevic"
+            "izvodjac": "Gordana Stojicevic",
+            "tekst": "♬ Ja ne mogu mila majko bez njega, bez njega mi ovaj zivot ne treba, suze teku mislim da cu umreti, moram ici moram ga, videti... ♬ ♪ ♬"
         },
         {
             "id":2,
             "naziv":"Pusti me da nadjem srcu lek",
-            "izvodjac": "Gordana Stojicevic"
+            "izvodjac": "Gordana Stojicevic",
+            "tekst": "♬ Molim te, pusti me da nadjem srcu lek shvati me, necu vise da ti budem druga, a tako zelim cvrsto da te zagrlimi bar jos jednom oci da ti poljubim ...♬ ♪ ♬"
         },
         {
             "id":3,
-            "naziv":"Sta ce mi zivot",
-            "izvodjac": "Silvana Armenulic"
+            "naziv": "Sta ce mi zivot",
+            "izvodjac": "Silvana Armenulic",
+            "tekst": "♬ Noćas mi srce pati, noćas me duša boli. Teško je kad se voli, kad ostaneš sam... ♬ ♪ ♬"
         },
         {
             "id":4,
             "naziv":"Rane moje",
-            "izvodjac": "Silvana Armenulic"
+            "izvodjac": "Silvana Armenulic",
+            "tekst":"♬ Rane, rane moje, teske rane kako da prebolim kako da ga kunem, majko kad ga moja dusa hoce kad ga moje srce zeli kad ga majko ludo, ludo volim... ♬ ♪ ♬"
+            
         },
         {
             "id":5,
-            "naziv":"Danka",
-            "izvodjac": "Toma Zdravkovic"
+            "naziv":"Branka",
+            "izvodjac": "Toma Zdravkovic",
+            "tekst": "♬ Ej Branka, Branka, Branka reci mi Branka ko je kriv zbog naseg rastanka... ♬ ♪ ♬ "
         },
         {
             "id":6,
             "naziv":"Volela sam, volela",
-            "izvodjac": "Hanka Paldum"
+            "izvodjac": "Hanka Paldum",
+            "tekst": "♬ Volela sam, volela, volela sam ga cekala sam, cekala, srce da mi da... ♬ ♪ ♬ "
         },
         {
             "id":7,
             "naziv":"Crne kose",
-            "izvodjac": "Hanka Paldum"
+            "izvodjac": "Hanka Paldum",
+            "tekst": "♬ Znam jos uvijek crne kose sjaj osjecaje probudi u tebi, mozes reci da je svemu kraj nikada ti vjerovala ne bih... ♬ ♪ ♬"
         },
         {
             "id":8,
             "naziv":"Svirajte nocas samo za nju",
-            "izvodjac": "Toma Zdravkovic"
+            "izvodjac": "Toma Zdravkovic",
+            "tekst": "♬ Svirajte nocas samo za nju, ja cu da pevam, tugujem i placam. Svirajte nocas kao da je tu, iako je samo u mislima vracam... ♬ ♪ ♬"
         },
         {
             "id":9,
             "naziv":"Kafana je moja sudbina",
-            "izvodjac": "Toma Zdravkovic"
+            "izvodjac": "Toma Zdravkovic",
+            "tekst":"♬ Kafana je moja sudbina, ona me je sebi uzela. Kafana je moja istina, zeno jedina... ♬ ♪ ♬ "
         },
         {
             "id":10,
             "naziv":"Okuj me care",
-            "izvodjac": "Halid Beslic"
+            "izvodjac": "Halid Beslic",
+            "tekst": "♬ Okuj me care, znaj da je volim, za nju bih dao sve! Jace od okova, teze od lanaca oci su zelene! ♬ ♪ ♬ "
         },
         {
             "id": 11,
             "naziv":"Jutro je",
-            "izvodjac": "Nada Topcagic"
+            "izvodjac": "Nada Topcagic",
+            "tekst":"♬ Jutro je, jutro je, kad te nema bolje da se nisam ni probudila,nema mesta na jastuku koje nisam ljubila, zeljo moja... ♬ ♪ ♬ "
         },
         {
             "id":12,
             "naziv":"Za mustuluk",
-            "izvodjac": "Haris Dzinovic"
+            "izvodjac": "Haris Dzinovic",
+            "tekst":"♬ Za mustuluk bi pozlatio, prvog ko mi bude javio da se kajes sto si njegova i da si pogresila... ♬ ♪ ♬ "
         },
         {
             "id":13,
             "naziv":"Skitnica",
-            "izvodjac": "Marinko Rokvic"
+            "izvodjac": "Marinko Rokvic",
+            "tekst":"♬ Ovo je moja kuca ziveo sam tu, ovo je moja draga voleo sam nju, ono je covek neki sto mi uze sve, skitnice, cekajte me, ja nemam gde... ♬ ♪ ♬ "
         },
         {
             "id":14,
             "naziv":"Potrazicu oci nesto zelenije",
-            "izvodjac": "Marinko Rokvic"
+            "izvodjac": "Marinko Rokvic",
+            "tekst":"♬ Potražiću oči nešto zelenije,potražiću srce nešto iskrenije. Potražiću ženu koja ume, moju mladost da razume... ♬ ♪ ♬ "
         },
         {
             "id":15,
             "naziv":"Mecava",
-            "izvodjac": "Luis"
+            "izvodjac": "Luis",
+            "tekst":"♬ Pusti najveci mecavu, Gospode! Jabuku s krova nikad da ne pogode, burme vencane kum nek pijan izgubi, nek je nikad niko ne ljubi... ♬ ♪ ♬ "
         },
         {
             "id":16,
