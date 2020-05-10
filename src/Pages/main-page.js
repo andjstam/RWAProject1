@@ -15,11 +15,23 @@ export class MainPage{
         return element;
     }
 
-    drawMainView(){ //crta inicijalne stolove i pevacicu
-        const mainContainer=document.getElementById("main-content");
-        mainContainer.className="mainContainer";
+    drawMainView(){ 
+         const mainContainer=document.getElementById("main-content");
+         mainContainer.className="mainContainer";
 
-        let gostiDiv=this.makeElement("div","gostiDiv",mainContainer);
+         this.drawMainViewGuests(mainContainer);
+         this.drawMainViewSinger(mainContainer);
+         this.createModal(mainContainer);
+         this.body.appendChild(mainContainer);
+    }
+
+ // #region Guests
+
+    drawMainViewGuests(roditelj){
+        //let gostiDiv=this.makeElement("div","gostiDiv",mainContainer);
+        let gostiDiv=document.createElement("div");
+        gostiDiv.className="gostiDiv";
+
         let prviRed=this.makeElement("div","prviRed",gostiDiv);
         let prostor=this.makeElement("div","prostor",gostiDiv);
         let drugiRed=this.makeElement("div","drugiRed",gostiDiv);
@@ -48,12 +60,7 @@ export class MainPage{
                 this.createTableClickEvent(sto)
             )
         )
-
-        let pevacicaDiv=this.makeElement("div","pevacicaDiv",mainContainer);
-        pevacicaDiv.innerHTML="Ovde muzika";
- 
-        let modal=this.createModal(mainContainer);
-        this.body.appendChild(mainContainer);
+        roditelj.appendChild(gostiDiv);
     }
 
     createTableClickEvent(sto){
@@ -64,16 +71,40 @@ export class MainPage{
         else alert("Na ovom stolu nema gostiju!");  
     }
 
+// #endregion 
+
+// #region Singer
+
+    drawMainViewSinger(roditelj){
+         // let pevacicaDiv=this.makeElement("div","pevacicaDiv",mainContainer);
+         let pevacicaDiv=document.createElement("div");
+         pevacicaDiv.className="pevacicaDiv";
+
+         let tekstPesmeDiv=this.makeElement("div","tekstPesmeDiv",pevacicaDiv);
+         tekstPesmeDiv.id="tekstPesmeDiv";
+         tekstPesmeDiv.innerHTML="";
+         let slikaPevaciceDiv=this.makeElement("div","slikaPevaciceDiv",pevacicaDiv);
+         slikaPevaciceDiv.id="slikaPevaciceDiv";
+         roditelj.appendChild(pevacicaDiv);
+    }
+
+//#endregion
+
+//#region Modal
 
     createModal(par){
-        let modalBack=this.makeElement("div","modal-background",par);
+        let modalBack=document.createElement("div");
+        modalBack.className="modal-background";
         let modalDiv=this.makeElement("div","modal",modalBack);
 
-        let headerModalDiv=this.makeElDivement("div","headerModal",modalDiv);
+        let headerModalDiv=this.makeElement("div","headerModal",modalDiv);
         let topic=this.makeElement("label","topic",headerModalDiv)
         topic.innerHTML=("Narudzbenica");
-        let exitBtn=this.makeElement("button","exitBtn",headerModalDiv);
-        exitBtn.innerHTML="x";
+        let exitBtn=this.makeElement("div","exitBtn",headerModalDiv);
+        exitBtn.innerHTML="+";
+        fromEvent(exitBtn,'click').subscribe(event=>
+            document.querySelector('.modal-background').style.display='none'
+        )
         
         let songInput=this.makeElement("input","songInput",modalDiv)
         songInput.placeholder="Unesite ime pesme ili izvodjaca";
@@ -82,9 +113,10 @@ export class MainPage{
         tipInput.placeholder="Unesite baksis";
         let orderBtn=this.makeElement("button","orderBtn",modalDiv);
         orderBtn.innerHTML="Naruci";
-    }
 
-    
+        par.appendChild(modalBack);
+    }
+//#endregion
 
 
 }

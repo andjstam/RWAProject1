@@ -29,7 +29,7 @@
             "id":5,
             "naziv":"Branka",
             "izvodjac": "Toma Zdravkovic",
-            "tekst": "♬ Ej Branka, Branka, Branka reci mi Branka ko je kriv zbog naseg rastanka... ♬ ♪ ♬ "
+            "tekst": "♬ Kad si mi tiho rekla bez tebe necu moci. Ej Branka, Branka, Branka reci mi Branka ko je kriv zbog naseg rastanka... ♬ ♪ ♬ "
         },
         {
             "id":6,
@@ -94,78 +94,131 @@
         {
             "id":16,
             "naziv":"Slike u oku",
-            "izvodjac": "Luis"
+            "izvodjac": "Luis",
+            "tekst":"♬ U tvome oku, slike su jasne, srećna ćeš živeti. Kol’ka je sad tu uloga moja,neću te pitati. Hej, dovoljno je to, kad mi kažes ti, dragi bez tebe ne mogu živeti. ♬ ♪ ♬"
         },
         {
             "id":17,
             "naziv":"Zal",
-            "izvodjac": "Saban Saulic"
+            "izvodjac": "Saban Saulic",
+            "tekst":"♬ Srce moje deli se na pre i posle nje, na mlade godine i žal što ostade. ♬ ♪ ♬"
         },
+    
         {
             "id":18,
             "naziv":"Dodji da ostarimo zajedno",
-            "izvodjac": "Saban Saulic"
+            "izvodjac": "Saban Saulic",
+            "tekst":"♬ Nisi me volela u ono vreme, a ja sam zeleo samo jedno. Sada kad nismo mi mladi ko nekada, dodji da ostarimo zajedno ♬ ♪ ♬"
         },
         {
             "id":19,
             "naziv":"Slavija",
-            "izvodjac": ["Dzej", "Mina Kostic"]
+            "izvodjac": ["Dzej", "Mina Kostic"],
+            "tekst":"♬ Slavija, pa Vukov spomenik, bez drugara i para i ljubavi tonem ko Titanik. Slavija, dva sveta granica molim te, budi mi, budi mi bar poslednja stanica. ♬ ♪ ♬"
         },
         {
             "id":20,
             "naziv":"A tebe nema",
-            "izvodjac": "Zorica Brunclik"
+            "izvodjac": "Zorica Brunclik",
+            "tekst":"♬ Kad si mi maslacke stavljao u kose i sve je isto kao nekad davno, zelene polja, listaju breze i behar se u procvat sprema. A tebe nema, a tebe nema. ♬ ♪ ♬"
         },
         {
             "id":21,
             "naziv":"S prvom kisom",
-            "izvodjac": "Ljuba Alicic"
+            "izvodjac": "Ljuba Alicic",
+            "tekst":"♬ S prvom kisom mislim na nas dvoje, kao nekad ostavljen i sam, opet krisom brisem suze svoje, da ne vidi niko kako sam. ♬ ♪ ♬"
         },
         {
             "id":22,
             "naziv":"Ti ne licis ni na jednu",
-            "izvodjac": "Ljuba Alicic"
+            "izvodjac": "Ljuba Alicic",
+            "tekst":"♬ Ti ne licis ni na jednu,a puno sam zena sreo. Mnogima sam kose pleo, a tebe sam zavoleo! ♬ ♪ ♬"
         },
         {
             "id":23,
             "naziv":"Samo malo",
-            "izvodjac": "Manjifiko"
+            "izvodjac": "Manjifiko",
+            "tekst":"♬ Samo malo malo bi' te tak'o, malo, necu jako, malo bi' te, samo 'nako... ♬ ♪ ♬"
         },
         {
             "id":24,
             "naziv":"Haljinicu boje lila",
-            "izvodjac": "Nikola Pejakovic"
+            "izvodjac": "Nikola Pejakovic",
+            "tekst":"♬ Haljinicu boje lila ti si duso oblacila, kad si isla da ga ljubis, da ga ljubis. A moja si ljubav bila... ♬ ♪ ♬"
         },
         {
             "id":25,
             "naziv":"Ruzo rumena",
-            "izvodjac": "Dragan Jovanovic"
+            "izvodjac": "Dragan Jovanovic",
+            "tekst":"♬ Ruzo rumena zbog tebe nemam sna. Ja sve bih dao kada bih znao kome si procvala. Ja sve bih dao kada bih znao zasto to nisam ja, Ruzo rumena ♬ ♪ ♬"
         },
         {
             "id":26,
             "naziv":"Pukni zoro",
-            "izvodjac": "Manjifiko"
+            "izvodjac": "Manjifiko",
+            "tekst":"♬ Aj pa pukni zoro, staru majku probudi, pa da vidi ko joj dolazi. Aj pa pukni zoro, moju dragu da ljubim, bele grudi da joj zagrlim... ♬ ♪ ♬"
         },
         {
             "id":27,
             "naziv":"Kada bi me pitali",
-            "izvodjac": "Zorica Brunclik"
+            "izvodjac": "Zorica Brunclik",
+            "tekst":"♬ Kada bi me pitali s kim bih noci nocila, kada bi me pitali, s kim bih zore cekala. Hej s tobom bih nocu zvezde brojala... ♬ ♪ ♬"
         },
         {
             "id":28,
             "naziv":"Pepeljuga",
-            "izvodjac": "Verica Serifovic"
+            "izvodjac": "Verica Serifovic",
+            "tekst":"♬ Pepeljugo moja, zvezdo tamne noci,ne daj svoje srce drugom, samo princu sto ce doci... ♬ ♪ ♬"
         },
         {
             "id":29,
-            "naziv":"Pepeljuga",
-            "izvodjac": "Gordana Stojicevic"
+            "naziv":"Ali pamtim jos",
+            "izvodjac": "Hanka Paldum",
+            "tekst":"♬ Ali pamtim jos one livade, one rijeke, one sume i puteljke, staru majku dok se smijei ognjiste dok me grije... ♬ ♪ ♬"
         },
         {
             "id":30,
             "naziv":"Uzalud vam trud sviraci",
-            "izvodjac": "Prljavo Kazaliste"
+            "izvodjac": "Prljavo Kazaliste",
+            "tekst":"♬ A za oblak mi se mjesec skrio, sakrio mi pute. Uzalud vam trud sviraci, za drugog su dunje zute... ♬ ♪ ♬"
+        },
+        {
+            "id":31,
+            "naziv":"Srce je moje violina",
+            "izvodjac": "Lepa Lukic",
+            "tekst":"♬ Srce je moje violina,sto je diras kad ne znas da sviras? Nemoj da kvaris najlepse zvuke, mesto pesme zacuces jauke ... ♬ ♪ ♬"
+        },
+        {
+            "id":32,
+            "naziv":"Zagrli me i oprosti",
+            "izvodjac": "Gordana Stojicevic",
+            "tekst":"♬ Zagrli me ti i oprosti mi, stegni srce, nemoj plakati. Jedno drugom smo bili sve, prva ljubav, sreća i proleće, sada prošlo je, prošlo sve... ♬ ♪ ♬"
+        },
+        {
+            "id":33,
+            "naziv":"Jesen u mom sokaku",
+            "izvodjac": "Tozovac",
+            "tekst":"♬ Ljubavi moja tugo, ti sto mucis srce moje, zar ti ne znas sta su boli kad se voli, kad se voli... ♬ ♪ ♬"
+        },
+        {
+            "id":34,
+            "naziv":"Da li je moguce",
+            "izvodjac": "Toma Zdravkovic",
+            "tekst":"♬ Da l' je moguće da si me zaboravila? Da l' je moguće, da si drugog poljubila? Da l' je moguće da si nestala... ♬ ♪ ♬"
+        },
+        {
+            "id":35,
+            "naziv":"Tuzno leto",
+            "izvodjac": "Toma Zdravkovic",
+            "tekst":"♬ Evo već je jesen, a tebe još nema. Sigurno si negde novu ljubav srela. A ja sivu jesen, zamenih za leto. Pa proklinjem more i to tužno leto.... ♬ ♪ ♬"
+        },
+        {
+            "id":36,
+            "naziv":"Kralj ponoci",
+            "izvodjac": "Ana Bekuta",
+            "tekst":"♬ Znam da laze me, znam da vara me. Kralj ponoci, prosjak zore, sa njim bice samo gorepromeni ga srce moje ... ♬ ♪ ♬"
         }
+
          
     ]
 }

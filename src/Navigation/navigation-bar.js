@@ -1,5 +1,5 @@
 import {fromEvent} from 'rxjs'
-import {Gosti} from '../../Models/gosti.js'
+import {Gosti} from '../../models/gosti.js'
 import '../../css/navigation-bar.css';
 
 
@@ -68,7 +68,7 @@ export class NavigationBar{
       if(htmlSto.zauzet===false){
          this.gosti.addEl(idStola);
          htmlSto.zauzet=true;
-         htmlSto.style.backgroundColor='blue';
+         htmlSto.style.backgroundColor='rgb(222, 145, 135)';
          console.log(this.gosti.niz);
       }
       else return;
@@ -78,9 +78,9 @@ export class NavigationBar{
       if(this.gosti.niz.length===0)
          alert("Kafana je prazna, nema gostiju!");
       else {
-         let ispraznjeniSto=document.getElementById('sto'+this.gosti.deleteEl());
+         let ispraznjeniSto=document.getElementById(this.gosti.deleteEl());
          ispraznjeniSto.zauzet=false;
-         ispraznjeniSto.style.backgroundColor='burlywood';
+         ispraznjeniSto.style.backgroundColor='teal';
          console.log(this.gosti.niz);
       }
    }

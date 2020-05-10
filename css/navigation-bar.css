@@ -23,18 +23,22 @@ body{
 }
 
 .dugme{
+    width: 150px;
+    height: 60px;
     background-color:rgb(123, 224, 224); 
     color: rgb(36, 33, 33);
+    border-color: teal;
     transition-duration: 0.2s;
-    padding: 15px 32px;
+    padding: 15px;
     margin: 5px;
-    border-radius: 7px;
+    border-radius: 4px;
     text-transform: uppercase;
     text-align: center;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
 }
 .dugme:hover{
-    background-color: rgb(182, 21, 21)k;
+    background-color: rgb(86, 160, 160);
     color: rgb(255, 255, 255);
 }
