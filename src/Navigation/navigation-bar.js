@@ -1,5 +1,6 @@
 import {fromEvent} from 'rxjs'
 import {Gosti} from '../../models/gosti.js'
+import {MainPage} from '../Pages/main-page'
 import '../../css/navigation-bar.css';
 
 
@@ -80,7 +81,7 @@ export class NavigationBar{
       else {
          let ispraznjeniSto=document.getElementById(this.gosti.deleteEl());
          ispraznjeniSto.zauzet=false;
-         ispraznjeniSto.style.backgroundColor='teal';
+         ispraznjeniSto.style.backgroundColor='rgb(86, 160, 160)';
          console.log(this.gosti.niz);
       }
    }

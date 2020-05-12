@@ -5,7 +5,7 @@ export class Pevacica{
     constructor(){
         this.narucenePesme=new Array;
     }
-
+    
     addSong(song){
         this.narucenePesme.push(song);
     }
@@ -14,7 +14,4 @@ export class Pevacica{
         return this.narucenePesme.shift();
     }
 
-    sortMostExpensive(){
-
-    }
 }

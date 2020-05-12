@@ -223,8 +223,13 @@
             "naziv":"Zute dunje",
             "izvodjac": "Indeksi",
             "tekst":"♬ Ode dragi da donese zute dunje carigradske, al ga nema tri godine tri godine aman, aman nit se javlja, niti dolazi... ♬ ♪ ♬"
+        },
+        {
+            "id":38,
+            "naziv":"Ja nisam rodjena da zivim sama",
+            "izvodjac": "Ana Bekuta",
+            "tekst":""
         }
-
          
     ]
 }

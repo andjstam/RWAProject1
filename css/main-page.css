@@ -33,7 +33,8 @@
     height: 150px;
     background-color: rgb(86, 160, 160);
     border-radius: 8%;
-    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2)
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
 }
 
 .prostor{
@@ -49,13 +50,15 @@
 .tekstPesmeDiv{
     width: 300px;
     height: 200px;
-    background-color: cornsilk;
+    background-color:rgb(218, 233, 226);
     border: darkslategray;
     border-radius: 50%;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
-    transform: rotate(15deg);
+    font-size: 20px;
+    font-family:'Century Gothic';
+    text-align: center;
 }
-.modal-background{
+.modalBackground{
     width: 100%;
     height: 100%;
     top:0;
@@ -126,4 +129,5 @@
 .listaUl{
     text-align: left;
     display: none;
+    padding-left: 30px;
 }
