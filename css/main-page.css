@@ -65,12 +65,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    display:none;
+    display:none;    
 }
 
 .modal{
     width: 600px;
-    height: 300px;
+    height: 300px auto;
     padding: 20px;
     border-radius: 4px;
     background-color: white;
@@ -114,4 +114,16 @@
     text-transform: uppercase;
     background-color: cadetblue;
     cursor: pointer;
+}
+
+.baseAnswerDiv{
+    text-align: center;
+    font-size: 15px;
+    color:black;
+    display: block;
+}
+
+.listaUl{
+    text-align: left;
+    display: none;
 }

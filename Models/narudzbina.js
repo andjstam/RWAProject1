@@ -1,5 +1,5 @@
 
-export class Narudzbenica{
+export class Narudzbina{
 
     constructor(){
         this.gost=0;
