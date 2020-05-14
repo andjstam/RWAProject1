@@ -4,7 +4,7 @@
 }
 
 .gostiDiv{
-    width: 64%;
+    width: 67%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -97,8 +97,10 @@
 }
 
 .pevacicaDiv{
+    margin-left: 20px;
+    padding-left: 60px;
     width: 340px;
-    padding: 50px;
+    padding: 0px;
     display: flex;
     flex-direction: column;
 }
@@ -116,6 +118,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.slikaPevaciceDiv{
+    padding-top: 10px;
+    height: 280px;
+    background-image: url(../resources/pevacica3.png);
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .zarada{
