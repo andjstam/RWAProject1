@@ -21,7 +21,7 @@ export class MainPage{
         this.body=document.getElementById("main") as HTMLDivElement;
         this._service=new SongService();
         this._pevacica=new Pevacica();
-        this._behaviorSinger=new BehaviorSubject("Dobrodosli!");
+        this._behaviorSinger=new BehaviorSubject("Dobrodošli!");
         this._gosti=new Gosti();
         this._tableClickID=0;
         this._ukupnaZarada=0;
@@ -171,15 +171,15 @@ export class MainPage{
 
         let headerModalDiv:HTMLDivElement=this.makeElement("div","headerModal",modalDiv);
         let topic:HTMLLabelElement=this.makeElement("label","topic",headerModalDiv)
-        topic.innerHTML=(`Narudzbenica`);
+        topic.innerHTML=(`Narudžbenica`);
         let exitBtn:HTMLButtonElement=this.makeElement("div","exitBtn",headerModalDiv);
         exitBtn.innerHTML="+";
     
         let songInput:HTMLInputElement=this.makeElement("input","songInput",modalDiv);
-        songInput.placeholder="Unesite ime pesme ili izvodjaca";
+        songInput.placeholder="Unesite pun naziv pesme za naručivanje";
         songInput.id="songInput";
         let tipInput:HTMLInputElement=this.makeElement("input","tipInput",modalDiv)
-        tipInput.placeholder="Unesite baksis";
+        tipInput.placeholder="Unesite bakšiš (obavezno polje)";
         tipInput.id="tipInput";
 
         let baseAnswerDiv:HTMLDivElement=this.makeElement("div","baseAnswerDiv",modalDiv);
@@ -187,7 +187,7 @@ export class MainPage{
         baseAnswerDiv.id="baseAnswerDiv";
         let orderBtn:HTMLButtonElement=this.makeElement("button","orderBtn",modalDiv);
         orderBtn.id="orderBtn";
-        orderBtn.innerHTML="Naruci";
+        orderBtn.innerHTML="Naruči";
 
         this.createExitButtonEvent(exitBtn);
         this.createOrderButtonEvent(orderBtn,songInput,tipInput);
@@ -234,20 +234,19 @@ export class MainPage{
     
     checkOrder(nadjenaPesma:any,tip:number){        
         if(nadjenaPesma.length===0)
-            alert(`Nevalidan naziv, pesma nije narucena.`);
+            alert(`Nevalidan naziv, pesma nije naručena.`);
         else{
             let narudzbina:Narudzbina=new Narudzbina(this._tableClickID,nadjenaPesma[0].id,tip);
             this._pevacica.addSong(narudzbina);
             console.log(narudzbina);
             console.log(this._pevacica.narucenePesme);
-            alert(`Pesma "${nadjenaPesma[0].naziv}" je narucena za sto broj ${this._tableClickID}!`)
+            alert(`Pesma "${nadjenaPesma[0].naziv}" je naručena za sto broj ${this._tableClickID}!`)
         } 
     }
 
     countTip(suma:number){          
         let zaradaDiv:HTMLDivElement=document.getElementById("zarada") as HTMLDivElement;
         this._ukupnaZarada= +this._ukupnaZarada + +suma;
-        console.log(`Kad se sracuna ${this._ukupnaZarada}`);
         zaradaDiv.innerHTML=`Ukupna zarada: ${this._ukupnaZarada}`;
     }
     
@@ -281,7 +280,7 @@ export class MainPage{
     drawSearchedSongs(pronadjeno:any){
         let prikaz=document.getElementById("baseAnswerDiv") as HTMLDivElement;
         if(pronadjeno.length===0){
-            prikaz.innerHTML="Zao nam je! Muzika ne zna datu pesmu!";
+            prikaz.innerHTML="Žao nam je! Pevačica ne zna datu pesmu!";
         }
         else{
             prikaz.innerHTML="";

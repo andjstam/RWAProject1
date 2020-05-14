@@ -73,7 +73,6 @@ export class NavigationBar{
       .subscribe(event =>{
          if(this._mainPage._gosti.areThereAvailableTables()){
             let idStola:string=(Math.floor((Math.random()*6 + 1))).toString();
-            console.log(`Random odabrani broj ${idStola}`);
             this.addGuestIfAvailable(idStola);
          }
          else alert("Zao nam je, nema vise slobodnih stolova!");
@@ -83,11 +82,10 @@ export class NavigationBar{
    addGuestIfAvailable(idStola:string)
    {
       let htmlSto:HTMLDivElement=document.getElementById(idStola) as HTMLDivElement;
-      console.log(htmlSto);
       if(this._mainPage._gosti.checkIfAvailable(idStola)===true){
 
          let tableObserver=this._mainPage._behaviorSinger.subscribe( (value:string) => {
-            if(value==="Dobrodosli!" || value==="Orkestar se štimuje")
+            if(value==="Dobrodošli!" || value==="Orkestar se štimuje")
                htmlSto.innerHTML='';
             else{
                htmlSto.innerHTML=`${value}`;
