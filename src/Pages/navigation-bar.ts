@@ -11,13 +11,11 @@ export class NavigationBar{
    rootContainer:HTMLDivElement;
    _router:Router;
    _mainPage:MainPage;
-   //gosti:Gosti;
 
    constructor(){
       this.rootContainer=document.getElementById("main") as HTMLDivElement;
       this._router=new Router();
       this._mainPage=new MainPage();
-     // this.gosti=new Gosti();
    }
    
    drawNavigation(){

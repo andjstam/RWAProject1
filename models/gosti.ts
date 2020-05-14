@@ -31,7 +31,4 @@ export class Gosti{
     deleteEl(){ 
         return this.niz.shift();
     }
-
-
-
 }

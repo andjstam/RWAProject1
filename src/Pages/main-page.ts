@@ -236,7 +236,7 @@ export class MainPage{
         if(nadjenaPesma.length===0)
             alert(`Nevalidan naziv, pesma nije narucena.`);
         else{
-            let narudzbina:Narudzbina=new Narudzbina(this._tableClickID,nadjenaPesma[0].id,tip); //nadjenaPesma[0] je zapravo prvi elemenrt json odgovora
+            let narudzbina:Narudzbina=new Narudzbina(this._tableClickID,nadjenaPesma[0].id,tip);
             this._pevacica.addSong(narudzbina);
             console.log(narudzbina);
             console.log(this._pevacica.narucenePesme);
