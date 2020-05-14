@@ -228,7 +228,25 @@
             "id":38,
             "naziv":"Ja nisam rodjena da zivim sama",
             "izvodjac": "Ana Bekuta",
-            "tekst":""
+            "tekst":"♬ Ja nisam rodjena da zivim sama. U ovo vreme burno. Samo u tvom zagrljaju osecam se ja sigurno...♬ ♪ ♬"
+        },
+        {
+            "id":39,
+            "naziv":"Miljacka",
+            "izvodjac": "Halid Beslic",
+            "tekst":"♬ Ko bi rek'o cuda da se dese, pa Miljacka mostove odnese, da ne mogu tebi doc', da ne mogu ulicom ti proc'...♬ ♪ ♬"
+        },
+        {
+            "id": 40,
+            "naziv":"Polomicu case od kristala",
+            "izvodjac": "Miroslav Ilic",
+            "tekst":"♬ Polomiću čaše od kristala, počupaću bokore od lala, otkinuću još dve žice, još dve strune, ostaviću violinu neka trune...♬ ♪ ♬"
+        },
+        {
+            "id": 41,
+            "naziv": "Jos te nesto cini izuzetnom",
+            "izvodjac": "Miroslav Ilic",
+            "tekst": "♬ Još te nešto čini izuzetnom, ne samo lepota voleo sam te i voleću te do kraja života... ♬ ♪ ♬"
         }
          
     ]

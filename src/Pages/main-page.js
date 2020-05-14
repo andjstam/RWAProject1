@@ -1,4 +1,4 @@
-import {of, fromEvent, Observable, BehaviorSubject} from 'rxjs';
+import {of, fromEvent, Observable, BehaviorSubject, merge, zip} from 'rxjs';
 import {debounceTime, switchMap, map, takeUntil, take} from 'rxjs/operators';
 import {SongService} from '../../services/song-service';
 import {Narudzbina} from '../../models/narudzbina';
@@ -13,11 +13,11 @@ export class MainPage{
         this._pevacica=new Pevacica();
         this._behaviorSinger=new BehaviorSubject("Dobrodosli!");
         this._tableClickID=0;
+        this._ukupnaZarada=0;
     }
 
     makeElement(el, name, parent)
     {
-
         let element=document.createElement(el);
         element.className=name;
         parent.appendChild(element);
@@ -46,50 +46,47 @@ export class MainPage{
         let prostor=this.makeElement("div","prostor",gostiDiv);
         let drugiRed=this.makeElement("div","drugiRed",gostiDiv);
 
-        let prviSto=this.makeElement("div","sto",prviRed);
+        let prviSto=this.makeElement("div","sto1",prviRed);
         prviSto.id="1";
         prviSto.zauzet=false;
-        let drugiSto=this.makeElement("div","sto",prviRed);
+        let drugiSto=this.makeElement("div","sto2",prviRed);
         drugiSto.id="2";
         drugiSto.zauzet=false;
-        let treciSto=this.makeElement("div","sto",prviRed);
+        let treciSto=this.makeElement("div","sto3",prviRed);
         treciSto.id="3";
         treciSto.zauzet=false;
-        let cetvrtiSto=this.makeElement("div","sto",drugiRed);
+        let cetvrtiSto=this.makeElement("div","sto3",drugiRed);
         cetvrtiSto.id="4";
         cetvrtiSto.zauzet=false;
-        let petiSto=this.makeElement("div","sto",drugiRed);
+        let petiSto=this.makeElement("div","sto4",drugiRed);
         petiSto.id="5";
         petiSto.zauzet=false;
-        let sestiSto=this.makeElement("div","sto",drugiRed);
+        let sestiSto=this.makeElement("div","sto1",drugiRed);
         sestiSto.id="6";
         sestiSto.zauzet=false;
 
-        // let prviRed$=of(prviSto,drugiSto, treciSto);
-        // let drugiRed$=of(cetvrtiSto, petiSto,sestiSto);
-        // merge(
-        //     prviRed$,
-        //     drugiRed$
-        // ).subscribe(sto =>{
-        //     fromEvent(sto, 'click').subscribe(event =>{
-        //                 this._tableClickID=sto.id;
-        //                 this.createTableClickEvent(sto);
-        //          })
-        //     })    
-        let stolovi$= of(prviSto,drugiSto, treciSto, cetvrtiSto, petiSto,sestiSto).subscribe(sto=>
-            fromEvent(sto, 'click').subscribe(event =>{
-                this._tableClickID=sto.id;
-                this.createTableClickEvent(sto)
+        let prviRed$=of(prviSto,drugiSto, treciSto);
+        let drugiRed$=of(cetvrtiSto, petiSto,sestiSto);
+        this.mergeTableClickEvent(prviRed$,drugiRed$);
 
-            })
-        )
         roditelj.appendChild(gostiDiv);
+    }
+
+    mergeTableClickEvent(prviR,drugiR){
+        merge(
+            prviR,
+            drugiR
+        ).subscribe(sto =>{
+            fromEvent(sto, 'click').subscribe(event =>{
+                        this._tableClickID=sto.id;
+                        this.createTableClickEvent(sto);
+                 })
+            })  
     }
 
     createTableClickEvent(sto){
         if(sto.zauzet){
             document.getElementById("modalBackground").style.display='flex';
-            //console.log('Iz funkcije TableClick, broj stola je ' + this._tableClickID + sto.zauzet);
         }
         else alert("Na ovom stolu nema gostiju!");  
     }
@@ -99,9 +96,13 @@ export class MainPage{
 // #region Singer
 
     drawMainViewSinger(roditelj){
-         
+
          let pevacicaDiv=document.createElement("div");
          pevacicaDiv.className="pevacicaDiv";
+
+         this._pevacica.addSong(new Narudzbina(0,34,0));
+         this._pevacica.addSong(new Narudzbina(0,6,0));
+         this._pevacica.addSong(new Narudzbina(0,21,0));
 
          let tekstPesmeDiv=this.makeElement("div","tekstPesmeDiv",pevacicaDiv);
          tekstPesmeDiv.id="tekstPesmeDiv";
@@ -109,12 +110,18 @@ export class MainPage{
          let slikaPevaciceDiv=this.makeElement("div","slikaPevaciceDiv",pevacicaDiv);
          slikaPevaciceDiv.id="slikaPevaciceDiv";
          roditelj.appendChild(pevacicaDiv);
+         let zarada=this.makeElement("div","zarada",pevacicaDiv);
+         zarada.id="zarada";
+         zarada.innerHTML="Ukupna zarada:";
 
          this.makeSubjectSinger(tekstPesmeDiv);
+         let observerSinger=this._behaviorSinger.subscribe(
+             tekst => tekstPesmeDiv.innerHTML=`${tekst}`
+         )
     }
 
     makeSubjectSinger(tekstPesmeDiv){
-        let kraj=document.getElementById("btnKraj");
+        let kraj=document.getElementById("btnZaustavi");
         let cancel$=fromEvent(kraj,'click');
         
         let timer$=new Observable(subscriber =>{
@@ -124,22 +131,28 @@ export class MainPage{
                 else{
                     let narudzbenicaTrenutnePesme=this._pevacica.singASong();
                     let trenutnaPesmaId=narudzbenicaTrenutnePesme.pesma;
-                    this._service.getSongById(trenutnaPesmaId).subscribe(pesma => 
+                    this._service.getSongById(trenutnaPesmaId).subscribe(pesma =>{
+                        this.changeTableColorWhenSongIsPlaying(narudzbenicaTrenutnePesme);
                         subscriber.next(pesma.tekst)
-                    )  
+                    })  
                 }
-            },6000)
+            },9000)
         }).pipe(
             takeUntil(cancel$)
         )
-        .subscribe(
-            el=>{ tekstPesmeDiv.innerHTML=`${el}`;
-            console.log(el)},
-            null,
-            ()=>console.log("all done!")
-        );
 
-        this._behaviorSinger.subscribe(timer$);
+        timer$.subscribe(this._behaviorSinger);
+    }
+
+    changeTableColorWhenSongIsPlaying(narudzbina){
+        let idStola=narudzbina.gost;
+        if(idStola!=0){
+            let htmlSto=document.getElementById(idStola);
+            htmlSto.style.backgroundColor='rgb(160, 34, 34)';
+            setTimeout(()=>{
+                htmlSto.style.backgroundColor='rgb(222, 145, 135)';
+            },7000)
+        }
     }
 
 //#endregion
@@ -169,10 +182,11 @@ export class MainPage{
         baseAnswerDiv.innerHTML="";
         baseAnswerDiv.id="baseAnswerDiv";
         let orderBtn=this.makeElement("button","orderBtn",modalDiv);
+        orderBtn.id="orderBtn";
         orderBtn.innerHTML="Naruci";
 
         this.createExitButtonEvent(exitBtn);
-        this.createOrderButtonEvent(orderBtn,songInput);
+        this.createOrderButtonEvent(orderBtn,songInput,tipInput);
 
         par.appendChild(modalBack);
     }
@@ -184,20 +198,30 @@ export class MainPage{
         }) 
     }
 
-    createOrderButtonEvent(orderBtn,songI){
+    createOrderButtonEvent(orderBtn,songI,tipInput){
 
-        let orders$=fromEvent(orderBtn,'click').subscribe(event =>{
+        let tipObserv$=fromEvent(tipInput,'input').pipe( 
+            debounceTime(1000),
+            map(ev => ev.target.value));     
+        let orderObs$=fromEvent(orderBtn,'click');
+
+        zip(tipObserv$,
+            orderObs$
+        ).pipe(
+            map(([suma,event]) => ({suma, event}))
+        ).subscribe(sumaEvent => {
+            
             let song=this.formatInputString(songI.value);
-            let tipI=parseInt(document.getElementById("tipInput").value);
             this._service.getSongByName(song)
             .subscribe(nadjenaPesma => {
-                this.checkOrder(nadjenaPesma, tipI);
+                this.checkOrder(nadjenaPesma, sumaEvent.suma);
             });
+            this.countTip(sumaEvent.suma);
             document.getElementById("modalBackground").style.display='none';
             this.clearModal();
         })
+      
     }
-    //iskoristi zip za oba input polja, da se sacekaju i onda spoje, a kad se klikne na naruci da se samo napravi objekat
 
     formatInputString(songName) {
         songName = songName.toLowerCase();
@@ -205,8 +229,7 @@ export class MainPage{
     } 
     
     checkOrder(nadjenaPesma,tip){
-        if(isNaN(tip))
-             tip=0;
+
         if(nadjenaPesma.length===0)
             alert(`Nevalidan naziv, pesma nije narucena.`);
         else{
@@ -214,8 +237,15 @@ export class MainPage{
             this._pevacica.addSong(narudzbina);
             console.log(narudzbina);
             console.log(this._pevacica.narucenePesme);
-            alert(`Pesma ${nadjenaPesma[0].naziv} je narucena za sto broj ${this._tableClickID}!`)
+            alert(`Pesma "${nadjenaPesma[0].naziv}" je narucena za sto broj ${this._tableClickID}!`)
         } 
+    }
+
+    countTip(suma){
+        let zaradaDiv=document.getElementById("zarada");
+        this._ukupnaZarada= +this._ukupnaZarada + +suma;
+        console.log(`Kad se sracuna ${this._ukupnaZarada}`);
+        zaradaDiv.innerHTML=`Ukupna zarada: ${this._ukupnaZarada}`;
     }
     
     clearModal(){
@@ -269,8 +299,6 @@ export class MainPage{
         prikaz.appendChild(lista);
     }
 
-
 //#endregion
-
 
 }
