@@ -6,6 +6,7 @@ import {Pevacica} from '../../models/pevacica'
 import {Pesma} from '../../models/pesma'
 import '../../css/main-page.css';
 import { Gosti } from '../../models/gosti';
+import { PesmaRequest } from '../../models/pesmaRequest';
 
 export class MainPage{
 
@@ -41,7 +42,8 @@ export class MainPage{
 
          this.drawMainViewGuests(mainContainer);
          this.drawMainViewSinger(mainContainer);
-         this.createModal(mainContainer);
+         this.createModalOrder(mainContainer);
+         this.createModalAddSong(mainContainer);
          this.createSongSearchEvent();
          this.body.appendChild(mainContainer);
     }
@@ -122,7 +124,8 @@ export class MainPage{
     }
 
     makeSubjectSinger(){
-        let kraj=document.getElementById("btnZaustavi") as HTMLButtonElement;
+        //let kraj=document.getElementById("btnZaustavi") as HTMLButtonElement;
+        let kraj=document.getElementById("btnKraj") as HTMLButtonElement;
         let cancel$=fromEvent(kraj,'click');
         
         let timer$=new Observable(subscriber =>{
@@ -139,7 +142,7 @@ export class MainPage{
                             subscriber.next(pesma.tekst);
                         })  
                 }}
-            },9000)
+            },3000)
         }).pipe(
             takeUntil(cancel$)
         )
@@ -160,9 +163,9 @@ export class MainPage{
 
 //#endregion
 
-//#region Modal
+//#region Modal Order
 
-    createModal(par:HTMLDivElement){
+    createModalOrder(par:HTMLDivElement){
 
         let modalBack:HTMLDivElement=document.createElement("div");
         modalBack.className="modalBackground";
@@ -204,13 +207,13 @@ export class MainPage{
 
     createOrderButtonEvent(orderBtn:HTMLButtonElement,songI:HTMLInputElement,tipInput:HTMLInputElement){
 
-        let tipObserv$=fromEvent(tipInput,'input').pipe( 
+        let tipObserver$=fromEvent(tipInput,'input').pipe( 
             debounceTime(1000),
             map(ev => (ev.target as HTMLInputElement).value));     
-        let orderObs$=fromEvent(orderBtn,'click');
+        let orderObserver$=fromEvent(orderBtn,'click');
 
-        zip(tipObserv$,
-            orderObs$
+        zip(tipObserver$,
+            orderObserver$
         ).pipe(
             map(([suma,event]) => ({suma, event}))
         ).subscribe(sumaEvent => {
@@ -304,4 +307,77 @@ export class MainPage{
 
 //#endregion
 
+
+//#region Modal Add Song
+
+    createModalAddSong(par:HTMLDivElement){
+
+        let modalBack:HTMLDivElement=document.createElement("div");
+        modalBack.className="modalBackground";
+        modalBack.id="modalBackgroundAddSong";
+        let modalDiv:HTMLDivElement=this.makeElement("div","modal",modalBack);
+
+        let headerModalDiv:HTMLDivElement=this.makeElement("div","headerModal",modalDiv);
+        let topic:HTMLLabelElement=this.makeElement("label","topicAddSong",headerModalDiv)
+        topic.innerHTML=(`Dodaj novu pesmu koju će orkestar znati`);
+        let exitBtnAddSong:HTMLButtonElement=this.makeElement("div","exitBtn",headerModalDiv);
+        exitBtnAddSong.innerHTML="+";
+
+        let songInput:HTMLInputElement=this.makeElement("input","songInput",modalDiv);
+        songInput.placeholder="Unesite naziv pesme";
+        songInput.id="songNameInput";
+        let singerInput:HTMLInputElement=this.makeElement("input","songInput",modalDiv)
+        singerInput.placeholder="Unesite ime i prezime izvođača pesme";
+        singerInput.id="singerInput"
+        let songTextInput:HTMLInputElement=this.makeElement("input","songInput",modalDiv)
+        songTextInput.placeholder="Unesite tekst pesme";
+        songTextInput.id="songTextInput";
+
+        let baseAnswerDiv:HTMLDivElement=this.makeElement("div","baseAnswerDiv",modalDiv);
+        baseAnswerDiv.innerHTML="";
+        baseAnswerDiv.id="baseAnswerDiv1";
+        let addSongBtn:HTMLButtonElement=this.makeElement("button","addSongBtn",modalDiv);
+        addSongBtn.id="addSongBtn";
+        addSongBtn.innerHTML="Dodaj pesmu";
+
+        this.createExitBtnEvent(exitBtnAddSong);
+        this.createAddSongBtnEvent(addSongBtn,songInput, singerInput, songTextInput)
+
+        par.appendChild(modalBack);
+    }
+
+    createExitBtnEvent(exitBtn:HTMLButtonElement){
+        fromEvent(exitBtn,'click').subscribe(event=>{
+        (document.getElementById("modalBackgroundAddSong") as HTMLDivElement).style.display='none';
+        this.clearAddSongModal();
+    }) 
+    }
+
+    createAddSongBtnEvent(addSongBtn:HTMLButtonElement,songI:HTMLInputElement,singerI:HTMLInputElement, text: HTMLInputElement){
+        fromEvent(addSongBtn,'click').subscribe(
+            event =>{
+            let tekst: string= "♬"+ text.value + " ♬ ♪ ♬";
+            let pesma= new PesmaRequest(songI.value, singerI.value, tekst);
+            this._service.postNewSong(pesma)
+            .subscribe((pesma : Pesma) => {
+                    //DA PROVERIM DA LI TE PESME VEC IMA U BAZI!
+                    // console.log("Dodata pesma:")
+                    // console.log(pesma);
+                    alert (`Uspesno dodata pesma ${pesma.naziv}! Sada možete i ovu pesmu naručiti!`);
+                    (document.getElementById("modalBackgroundAddSong") as HTMLDivElement).style.display='none';
+                },
+                err=> alert("Dogodila se greška prilikom upisa pesme u bazu!")
+            )
+            this.clearAddSongModal();
+            }
+        )
+    }
+
+    clearAddSongModal(){
+        (document.getElementById("songNameInput") as HTMLInputElement).value="";
+        (document.getElementById("singerInput") as HTMLInputElement).value="";
+        (document.getElementById("songTextInput") as HTMLInputElement).value="";
+    }
 }
+
+//#endregion

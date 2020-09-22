@@ -1,4 +1,5 @@
 import {urlConst} from '../constants/url-constants';
+import { PesmaRequest} from '../models/pesmaRequest'
 import {from} from 'rxjs';
 
 const url=urlConst.URL;
@@ -40,5 +41,16 @@ export class SongService{
             fetch(`${url}/pesme?q=${tekst}`)
             .then(res =>  {return res.json() })
         )
+    }
+
+    postNewSong( song: PesmaRequest){
+        const newSong : Object = {
+            method: "post",
+            body: JSON.stringify(song),
+            headers: {'Content-Type':'application/json'}
+        };
+        return from( 
+            fetch(`${url}/pesme`, newSong)
+            .then(res => {return res.json()}))
     }
 }

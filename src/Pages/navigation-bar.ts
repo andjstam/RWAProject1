@@ -50,8 +50,12 @@ export class NavigationBar{
 
       const dugme3:HTMLButtonElement=document.createElement("button");
       dugme3.className="dugme";
-      dugme3.id="btnZaustavi";
-      dugme3.innerHTML="Zaustavi";
+      dugme3.id="btnDodajNovuPesmu";
+      dugme3.innerHTML="Dodaj novu pesmu";
+      fromEvent(dugme3,'click')
+      .subscribe(() =>{
+         (document.getElementById("modalBackgroundAddSong") as HTMLDivElement).style.display='flex';
+      })
       navContainer.appendChild(dugme3);
 
       const dugme4:HTMLButtonElement=document.createElement("button");
@@ -61,6 +65,7 @@ export class NavigationBar{
       navContainer.appendChild(dugme4);
       fromEvent(dugme4,'click')
       .subscribe(event =>{
+         this.unsubscribeAllGuests();
          this._router.navigateToClosingPage();
       })
 
@@ -116,6 +121,14 @@ export class NavigationBar{
             ispraznjeniSto.cancelSubscription();
          }
          console.log(this._mainPage._gosti.niz);
+      }
+   }
+
+   unsubscribeAllGuests(){
+      if(!(this._mainPage._gosti.niz.length===0)){ 
+         this._mainPage._gosti.niz.forEach(gost => {
+            gost.cancelSubscription();
+         });
       }
    }
 }

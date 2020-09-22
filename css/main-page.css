@@ -152,19 +152,32 @@
 }
 
 .modal{
-    width: 600px;
-    height: 300px auto;
-    padding: 20px;
+    width: 500px;
+    min-height: 300px;
+    padding: 30px;
     border-radius: 4px;
     background-color: white;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
     text-align: center;
     font-family: 'Century Gothic';
     position: relative;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .topic{
+    margin-bottom: 40px;
+    margin-top:20px;
     font-size: 48px ;
+    font-family: 'Century Gothic';
+}
+
+.topicAddSong{
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-size: 30px ;
     font-family: 'Century Gothic';
 }
 
@@ -172,7 +185,7 @@
     width: 60%;
     height: 35px;
     display:block;
-    margin: 15px auto;
+    margin: 15px;
 }
 
 .exitBtn{
@@ -192,6 +205,16 @@
 .orderBtn{
     width: 100px;
     height: 35px;
+    border-radius: 4px;
+    margin: 20px auto;
+    text-transform: uppercase;
+    background-color: cadetblue;
+    cursor: pointer;
+}
+
+.addSongBtn{
+    width: 200px;
+    height: 40px;
     border-radius: 4px;
     margin: 20px auto;
     text-transform: uppercase;
