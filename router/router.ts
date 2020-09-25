@@ -7,13 +7,13 @@ export class Router{
     }
 
     navigateToMainPage(){
-        let glavnaStranica: NavigationBar=new NavigationBar();
-        glavnaStranica.drawNavigation();
+        let mainPage: NavigationBar=new NavigationBar();
+        mainPage.drawNavigation();
     }
 
     navigateToClosingPage(){
-        let zavrsnaStranica:ClosingPage=new ClosingPage();
-        zavrsnaStranica.drawClosingPage();
+        let closingPage:ClosingPage=new ClosingPage();
+        closingPage.drawClosingPage();
     }
 
 

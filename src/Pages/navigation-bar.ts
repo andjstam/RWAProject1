@@ -1,7 +1,7 @@
 import {fromEvent} from 'rxjs'
 import {Router} from '../../router/router'
-import {Gosti} from '../../models/gosti'
-import {Gost} from '../../models/gost'
+import {Gosti} from '../../models/Gosti'
+import {Gost} from '../../models/Gost'
 import {MainPage} from './main-page'
 import '../../css/navigation-bar.css';
 
@@ -77,17 +77,17 @@ export class NavigationBar{
       fromEvent(btn,'click')
       .subscribe(event =>{
          if(this._mainPage._gosti.areThereAvailableTables()){
-            let idStola:string=(Math.floor((Math.random()*6 + 1))).toString();
-            this.addGuestIfAvailable(idStola);
+            let idTable:string=(Math.floor((Math.random()*6 + 1))).toString();
+            this.addGuestIfAvailable(idTable);
          }
          else alert("Zao nam je, nema vise slobodnih stolova!");
       })
    }
 
-   addGuestIfAvailable(idStola:string)
+   addGuestIfAvailable(idTable:string)
    {
-      let htmlSto:HTMLDivElement=document.getElementById(idStola) as HTMLDivElement;
-      if(this._mainPage._gosti.checkIfAvailable(idStola)===true){
+      let htmlSto:HTMLDivElement=document.getElementById(idTable) as HTMLDivElement;
+      if(this._mainPage._gosti.checkIfAvailable(idTable)===true){
 
          let tableObserver=this._mainPage._behaviorSinger.subscribe( (value:string) => {
             if(value==="Dobrodošli!" || value==="Orkestar se štimuje")
@@ -97,7 +97,7 @@ export class NavigationBar{
             }
           }
          )
-         let sto=new Gost(idStola,tableObserver);
+         let sto=new Gost(idTable,tableObserver);
          sto.changeAvailability(true);
          this._mainPage._gosti.addEl(sto);
          htmlSto.style.backgroundColor='rgb(222, 145, 135)';

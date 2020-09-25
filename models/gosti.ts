@@ -1,8 +1,8 @@
-import {Gost} from './gost'
+import {Gost} from './Gost'
 export class Gosti{
 
     brojGostiju:number;
-    niz:Array<Gost>;
+    public niz:Array<Gost>;
 
     constructor(){
         this.brojGostiju =6;

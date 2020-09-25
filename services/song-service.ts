@@ -1,6 +1,7 @@
 import {urlConst} from '../constants/url-constants';
-import { PesmaRequest} from '../models/pesmaRequest'
-import {from} from 'rxjs';
+import { PesmaRequest} from '../models/PesmaRequest'
+import {from, Observable} from 'rxjs';
+import { Pesma } from '../models/Pesma';
 
 const url=urlConst.URL;
 
@@ -15,7 +16,7 @@ export class SongService{
         )
     }
 
-    getSongById(id:number){
+    getSongById(id:number): Observable<Pesma>{
         return from(
             fetch(`${url}/pesme/`+id)
             .then(res => {return res.json()})

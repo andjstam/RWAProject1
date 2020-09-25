@@ -121,8 +121,8 @@
 }
 
 .slikaPevaciceDiv{
-    padding-top: 10px;
-    height: 280px;
+    padding: 10px;
+    height: 270px;
     background-image: url(../resources/pevacica3.png);
     background-color: transparent;
     background-size: cover;
@@ -136,6 +136,42 @@
     font-family:'Century Gothic';
     font-size: 27px;
     border-radius: 4px;
+}
+
+.dugme{
+    width: 150px;
+    height: 60px;
+    background-color:rgb(123, 224, 224); 
+    color: rgb(36, 33, 33);
+    border-color: teal;
+    transition-duration: 0.2s;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.dugme:hover{
+    background-color: rgb(86, 160, 160);
+    color: rgb(255, 255, 255);
+}
+
+.dugmeNarucenePesme{
+    padding:10px;
+    border-color: rgb(47, 68, 52);
+    background-color: rgb(47, 68, 52);
+    color:white;
+    font-family:'Century Gothic';
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.dugmeNarucenePesme:hover{
+    background-color: rgb(38, 51, 41);
+    transition-duration: 2ms;
 }
 
 .modalBackground{
